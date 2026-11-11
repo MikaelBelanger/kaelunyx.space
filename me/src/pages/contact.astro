@@ -11,7 +11,7 @@ const description =
 <Layout {title} {description} footerBorder={false}>
 	<header class="text-center">
 		<h1 class="text-cosmic-adaptive-blue my-5 text-3xl">Contact</h1>
-		<p class="text-muted-fg mt-3 mb-4">
+		<p class="text-muted-fg mx-6 mt-3 mb-4">
 			Feel free to reach out to me through any of the platforms below:
 		</p>
 	</header>
@@ -19,16 +19,23 @@ const description =
 		<nav class="flex flex-col flex-wrap justify-center gap-4 p-3">
 			{
 				socials.map((category) => (
-					<div class="flew-wrap flex flex-col justify-center gap-4">
+					<div class="flex flex-col flex-wrap justify-center gap-4">
 						<h2 class="text-cosmic-adaptive-purple m-0 basis-full p-0 text-xl">
 							{category.category}
 						</h2>
-						<div class="flex flex-row flex-wrap justify-center gap-4">
-							{category.links.map((link, index) => (
+						<div
+							class={[
+								"grid",
+								"grid-cols-" + category.links.length,
+								"max-md:grid-cols-" +
+									Math.ceil(category.links.length / 2),
+								"justify-center",
+								"gap-4",
+							].join(" ")}>
+							{category.links.map((link) => (
 								<ContactLink
 									href={link.url}
 									platform={link.name}
-									mirror={index >= category.links.length / 2}
 								/>
 							))}
 						</div>

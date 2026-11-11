@@ -4,10 +4,9 @@ const sprite_src = "/sprite.svg";
 export interface Props {
 	href: string;
 	platform: string;
-	mirror?: boolean;
 }
 
-const { href, platform, mirror } = Astro.props;
+const { href, platform } = Astro.props;
 
 function titleize(str: string): string {
 	// nice function to make the platform names look better
@@ -21,16 +20,14 @@ function titleize(str: string): string {
 
 <a
 	{href}
-	class="contact-link"
+	class="contact-link justify-self-center"
 	aria-labelledby={platform.toLowerCase()}
 	target="_blank"
 	rel="external noopener noreferrer">
 	<svg aria-hidden="true" class="icon">
 		<use href={sprite_src + "#" + platform.toLowerCase()}></use>
 	</svg>
-	<span
-		id={platform.toLowerCase()}
-		class={"hover-contact" + (mirror ? " mirror" : "")}
+	<span id={platform.toLowerCase()} class="hover-contact"
 		>{titleize(platform)}</span
 	>
 </a>
