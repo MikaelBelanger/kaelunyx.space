@@ -20,8 +20,9 @@ function titleize(str: string): string {
 
 <a
 	{href}
-	class="contact-link justify-self-center"
+	aria-label={titleize(platform)}
 	aria-labelledby={platform.toLowerCase()}
+	class="contact-link justify-self-center"
 	target="_blank"
 	rel="external noopener noreferrer">
 	<svg aria-hidden="true" class="icon">

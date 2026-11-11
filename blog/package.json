@@ -1,7 +1,7 @@
 {
 	"name": "blog.kaelunyx.space",
 	"type": "module",
-	"version": "10.3.6",
+	"version": "10.3.7",
 	"engines": {
 		"node": ">=22.12.0"
 	},
